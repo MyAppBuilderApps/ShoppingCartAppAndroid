@@ -361,14 +361,7 @@ control.controller('loginCtrl',function($scope,$state,$ionicLoading,$http,$windo
                    $scope.registerPageCallFtn = function(){
                    $state.go('register');
                    };
-                   if($scope.type=='shopkeper'){
-                   $scope.userId = "sai";
-                   $scope.password = "password"
-                   }
-                   else{
-                   $scope.userId = "cust123";
-                   $scope.password = "password"
-                   }
+                   
                    
                    $scope.loginFtn = function(val1,val2){
                    username = val1;
