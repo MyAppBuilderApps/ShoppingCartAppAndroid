@@ -1,0 +1,55 @@
+<div class="modal">
+        <ion-header-bar align-title="center" class="bar bar-header" style="background:none; background-image : url(img/navigation_bar.png); background-size:100% 100%; background-repeat:no-repeat;border-radius: 0px; border: 0px;">
+         <h1 class="title" style="font-size:16px;">{{title}}</h1>
+        <button class="button button-clear " ng-click="detailclose()"><i class="icon ion-ios7-close-outline"></i></button>
+                  
+        </ion-header-bar>
+
+        
+  <ion-content has-header="true" padding="true" style="background-image : url(img/bg.png); background-size:100% 100%; background-repeat:no-repeat;">
+      <section class="card">
+          <ul class="list" >
+             
+              <ion-slide-box  align="center">
+                  <ion-slide ng-repeat="item in images"  align="center" style="padding:0; width:contain; height:55%; align:center; background-color:white;">
+                      
+                      <img src={{item.url}} style="width:contain; height:55%; align:center;"/>
+                      
+                  </ion-slide>
+                  
+              </ion-slide-box>
+              <!-- <p id="scrollTop" align="justify" ng-bind-html="deliberatelyTrustDangerousSnippet()" style="width:100%;"></p>
+               <p ng-bind-html="deliberatelyTrustDangerousSnippet1()"></p> -->
+              
+              <ul>
+                  <div class="item item-divider item-button-right" align="left">
+                      <div class="row" align="left" style="padding:0px;margin-top:0px;">
+                          <div class="col col-33" align="left" style="padding:0px;margin:0px;"><span class="input-label" align="left">Size:</span></div>
+                          <div class="col" align="left" style="padding:0px;margin-top:0px;">
+                              <select ng-model="size1" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;">                                                 <option>Small</option>                                            <option>Medium</option>                                                  <option>Large</option>
+                              </select>
+                          </div>
+                      </div>
+                      
+                  </div>
+                  <div class="item item-divider item-button-right" align="left">
+                      <div class="row" align="left" style="padding:0px;margin-top:0px;">
+                          <div class="col col-33" align="left" style="padding:0px;margin:0px;"><span class="input-label" align="left">Quantity:</span></div>
+                          <div class="col" align="left" style="padding:0px;margin-top:0px;"><input type="text" align="left" style="padding:6% 4% 4% 12%;" ng-model="qty1" ng-change="cngqty(qty1)" placeholder="Quantity"></div>
+                      </div>
+                      
+                  </div>
+                  <div class="item item-divider item-button-right" align="left">
+                      Unit Price: ${{amount}}
+                  </div>
+                  
+                  <button class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="save()">
+                      Save
+                  </button>
+                  
+                  </div>
+
+
+</section>
+  </ion-content>
+</div>

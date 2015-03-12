@@ -1,0 +1,183 @@
+/* Empty. Add your own CSS if you like */
+
+.inAppBrowserWrap {
+  width:100%;
+}
+
+
+form i.icon.error {
+  color: $assertive;
+}
+ 
+form input + i.icon.error {
+  display: none;
+  margin-left: 8px;
+}
+ 
+form.ng-submitted input.ng-invalid + i.icon.error {
+  display: block;
+}
+ 
+form .has-error {
+  border-left: 5px solid darken($assertive, 15%);
+}
+ 
+form .has-success {
+  border-left: 5px solid darken($energized, 15%);
+}
+ 
+form.ng-submitted input.ng-valid + i.icon.error {
+  display: none;
+}
+
+.doubleline {
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* number of lines to show */
+                -webkit-box-orient: vertical;
+                word-wrap: break-word !important;white-space: normal !important;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 82%;
+            }
+
+.file-input-wrapper6 {
+    width: 114px;
+    height: 114px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../img/btn_image.png);
+    background-size: 100% 100%;
+    border: none;
+}
+.file-input-wrapper6 > input[type="file"] {
+    font-size: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    background-image: url(../img/btn_image.png);
+    background-size: 100% 100%;
+    border: none;
+}
+
+.file-input-wrapper6 > .btn-file-input6 {
+    display: inline-block;
+    width: 114px;
+    height: 114px;
+    background-image: url(../img/btn_image.png);
+    background-size: 100% 100%;
+    border: none;
+}
+
+.file-input-wrapper6:hover > .btn-file-input6 {
+    background-image: url(../img/btn_image.png);
+    background-size: 100% 100%;
+    border: none;
+}
+
+.styled-select {
+          width:100%;
+          overflow: hidden;
+          background:white;
+          border: 1px solid #DDDDDD;
+          height: 30px;
+          border-radius:2px;
+          margin-bottom: 10px;
+}
+
+
+.postButton{
+  width:20%;
+  height:35px;
+  float:right;
+  background-color: #1E90FF;
+  color:white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.postButton:active{
+  opacity: 0.3;
+}
+
+audio{
+  width:100%;
+}
+video{
+  width:100%;
+} 
+.divback
+{
+        position: relative;
+        margin-right: 3%;
+        width: 95%;
+        height: auto;
+        padding: 10px;
+        background: #eeeeee;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        float: left;
+}
+    
+.divback:after
+{
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent #eeeeee;
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: -5px;
+        top: 20px;
+}
+
+
+.divback1
+{
+        position: relative;
+        margin-right: 3%;
+        width: 95%;
+        height: auto;
+        padding: 10px;
+        background: #eeeeee;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        float: left;
+
+
+}
+    
+.divback1:after
+{
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 0px 15px 15px;
+        border-color: transparent #eeeeee;
+        display: block;
+        width: 0;
+        z-index: 1;
+        right: -5px;
+        top: 20px;
+}
+
+.divback2
+{
+        position: relative;
+        margin-right: 3%;
+        width: 95%;
+        height: auto;
+        padding: 10px;
+        background: #eeeeee;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        float: left;
+
+}

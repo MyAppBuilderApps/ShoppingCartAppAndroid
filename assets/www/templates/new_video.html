@@ -1,0 +1,24 @@
+<div class="modal">
+    <ion-header-bar align-title="center" class="bar bar-header" style="background:none; background-image : url(img/navigation_bar.png); background-size:100% 100%; background-repeat:no-repeat;border-radius: 0px; border: 0px;">
+        <h1 class="title" style="font-size:16px;">{{title}}</h1>
+        <button class="button button-clear " ng-click="videoModal.hide();"><i class="icon ion-close-circled"></i></button>
+        
+    </ion-header-bar>
+    <ion-content>
+        <div style="padding:5% 5% 5% 5%;" align='center'>
+            <div style="margin:auto;width:40%;">
+                
+                <div class="file-input-wrapper6" ng-click="showActionsheet()">
+                    <button class="btn-file-input6"></button>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="padding">
+            <input type="submit" class="button button-block positive" ng-class="button_color" value="Create" ng-click="create_video()">
+                </div>
+        <br />
+    </ion-content>
+</div>

@@ -1,0 +1,50 @@
+<!--
+  This template loads for the 'tab.adopt' state (app.js)
+-->
+<ion-view title="Shopping App">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-left" ng-click="loginback()"></button>
+    </ion-nav-buttons>
+  <ion-content scroll="false">
+    <div class="list list-inset" ng-if="device=='iphone'">
+      <label class="item item-input "style="background-color:white;background-size:100% 100%;" >
+        <i class="icon "><img src="img/username.png" style="width:30px;height:30px;"/></i>
+        <input type="text" ng-model="userId" placeholder="UserId" style="">
+      </label>
+      <label class="item item-input" style="background-color:white;background-size:100% 100%;">
+        <i class="icon "><img src="img/password.png" style="width:30px;height:30px;"/></i>
+        <input type="password" ng-model="password" placeholder="Password" >
+      </label>
+      <button class="button button-full " style="background-color:#511E3A; color:#ffffff;" ng-click="loginFtn(userId,password);" >
+        Login
+      </button>
+      <!--<button class="button button-full icon-left ion-social-facebook" ng-click="fbLogin();" style="background-color:#335397;background-size:100% 100%;color:white;align:left">Log in with Facebook</button>
+      <button class="button button-full icon-left ion-social-twitter" ng-click="twitterLogin();" style="background-color:#00c7f7;background-size:100% 100%;color:white;align:left">Log in with Twitter</button>
+      <button class="button button-full icon-left ion-social-googleplus" ng-click="googleLogin();" style="background-color:#FE2E2E;background-size:100% 100%;color:white;">Log in with Google+</button>-->
+      <button ng-if="type=='customer'" class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="registerPageCallFtn();">Create an Account</button>
+
+    </div>
+ 
+      <div class="list list-inset" ng-if="device=='ipad'" style="padding:20%;">
+          <label class="item item-input "style="background-color:white;background-size:100% 100%;" >
+              <i class="icon "><img src="img/username.png" style="width:30px;height:30px;"/></i>
+              <input type="text" ng-model="userId" placeholder="UserId" style="">
+                  </label>
+          <label class="item item-input" style="background-color:white;background-size:100% 100%;">
+              <i class="icon "><img src="img/password.png" style="width:30px;height:30px;"/></i>
+              <input type="password" ng-model="password" placeholder="Password" >
+                  </label>
+          <button class="button button-full " style="background-color:#511E3A; color:#ffffff;" ng-click="loginFtn(userId,password);" >
+              Login
+          </button>
+          <!--<button class="button button-full icon-left ion-social-facebook" ng-click="fbLogin();" style="background-color:#335397;background-size:100% 100%;color:white;align:left">Log in with Facebook</button>
+          <button class="button button-full icon-left ion-social-twitter" ng-click="twitterLogin();" style="background-color:#00c7f7;background-size:100% 100%;color:white;align:left">Log in with Twitter</button>
+          <button class="button button-full icon-left ion-social-googleplus" ng-click="googleLogin();" style="background-color:#FE2E2E;background-size:100% 100%;color:white;">Log in with Google+</button>-->
+          <button ng-if="type=='customer'" class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="registerPageCallFtn();">Create an Account</button>
+          
+      </div>
+  </ion-content>
+</ion-view>
+
+
+

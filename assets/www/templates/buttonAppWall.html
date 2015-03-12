@@ -1,0 +1,25 @@
+ <ion-view title="Chat Support">
+      <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-ios7-arrow-left" ng-click="appwallBack()"></button>
+      </ion-nav-buttons>
+      
+      <div class="bar bar-subheader item-input-inset" >
+          <label class="item-input-wrapper">
+              <input type="text" id="Buttonpostmessage" placeholder="Your message goes here....">
+                  </label>
+          <button id="textPostMgs" class="button button-clear button-assertive" onclick="javascript:ButtonpostmessageFun();" >
+              <img src="img/btn_post.png" style="width:75px;height:auto; margin-top:3px;"/>
+          </button>
+      </div>
+      <ion-content>
+      <br>
+      <br>
+      
+          <div id="ButtonappwallListview" ng-if="device=='iphone'">
+          </div>
+      <div id="ButtonappwallListview" class="card" ng-if="device=='ipad'" style="padding:5% 10% 5% 10%">
+      </div>
+      
+      </ion-content>
+      
+      </ion-view>

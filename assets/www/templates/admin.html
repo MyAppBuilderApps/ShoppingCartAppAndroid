@@ -1,0 +1,111 @@
+<ion-view title="{{title}}">
+    <ion-side-menus>
+        
+        <ion-side-menu-content>
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-ios7-cart" ng-click="orderlistgo()"></button>
+  </ion-nav-buttons>
+
+  
+  <ion-content class="has-header" style="margin-bottom:5%; padding:0;">
+    <div class="padding" style="padding:2%; height:100%; margin-bottom:55px;">
+      
+      <div ng-if="device=='iphone'" ng-repeat="item in items"align="center" ng-style="{'padding':'2%','width':'42%','height':'230px', 'margin-right':'4%', 'margin-left':'4%', 'margin-bottom':'2%', 'float':'left', 'border-style':'dashed', 'border-color':'#b52c24', 'border-width': '2px', 'border-radius': '4px'}">
+          
+          <img src="{{item.images[0].url}}" style="height:115px; width:100%; border-radius: 6px;" ng-click="itemClickFt(item.id,item.title);"  >
+              
+              
+              <p align="center" style="width:100%;height:35px; padding:2%; align:center; margin-top:0px;"> {{item.title}}</p>
+              <div align="right" style="transform: rotate(352deg);-webkit-transform: rotate(352deg);">
+                  <span style="color:white; padding:4% 12% 4% 6%; background-image : url(img/tag.png); background-size:100% 100%; background-repeat:no-repeat;">${{convert(item.price)}}</span>
+              </div>
+              <button class="button button-small button-energized" ng-click="itemClickFtn(item.id,item.title);">
+                  View Item
+              </button>
+              
+              <div>
+                  &nbsp;
+              </div>
+              </div>
+      
+      <div ng-if="device=='ipad'" ng-repeat="item in items"   align="center" ng-style="{'padding':'2%','width':'28%','height':'360px', 'margin-right':'2%', 'margin-left':'3%', 'margin-bottom':'4%', 'float':'left', 'border-style':'dashed', 'border-color':'#b52c24', 'border-width': '2px', 'border-radius': '4px'}">
+          
+          <img src="{{item.images[0].url}}" style="height:220px; width:100%; border-radius: 6px;" ng-click="itemClickFt(item.id,item.title);"  >
+              
+             
+              <p align="center" style="width:100%;height:35px; padding:2%; align:center; margin-top:0px;"> {{item.title}}</p>
+              <div align="right" style="transform: rotate(352deg);-webkit-transform: rotate(352deg);margin-left:-20px;">
+              <span style="color:white; padding:4% 12% 4% 6%; background-image : url(img/tag.png); background-size:100% 100%; background-repeat:no-repeat;">${{convert(item.price)}}</span>
+              </div>
+              <button class="button button-small button-energized" ng-click="itemClickFtn(item.id,item.title);">
+                  View Item
+              </button>
+              
+              
+      </div>
+      <div>
+          &nbsp;
+          </div>
+     </div>
+      
+  </ion-content>
+  <div class="bar bar-footer" style="background:none;" >
+      <h1 class="title"> </h1>
+          <button class="button button-small ion-ios7-plus-outline button-royal" ng-click="addproduct()" style="margin-top:4px;">
+              Add Product
+          </button>
+  </div>
+ 
+        </ion-side-menu-content>
+        
+        <ion-side-menu side="left">
+            <ion-view >
+                <!--<header class="bar bar-header" style="background:none; background-image : url(img/navigation_bar.png); background-size:100% 100%; background-repeat:no-repeat;border-radius: 0px; border: 0px;">
+                    <a class="button button-icon icon ion-log-out" ng-click="logout()"></a>
+                    <h1 class="title">Category</h1>
+                </header>-->
+                
+                <ion-content class="has-header">
+                    <ion-list>
+                        
+                        <ion-item class="item item-button-right" ng-repeat="item in category" type="item-text-wrap" class="item" ng-click="listViewClickFtn(item.id,item.title,item.description,item.image,index);" style=" display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;word-wrap: break-word !important;white-space: normal !important;white-space: nowrap;text-overflow: ellipsis; padding-right:0px;margin-right:0px;">
+                            {{item.title}}
+                            <button ng-if="categoryid==item.id" class="button button-balanced button-outline" ng-click="" style="border:none;margin:0;padding:0;">
+                                <i class="icon ion-ios7-circle-filled " ></i>
+                            </button>
+                            <ion-option-button class="button button-positive button-outline" ng-click="editcatagory(item.id,item.title);" style="margin:0;padding:0;">
+                                <button class="button button-positive button-outline" ng-click="editcatagory(item.id,item.title);">
+                                    <i class="icon ion-ios7-compose-outline " ></i>
+                                </button>
+                                 </ion-option-button>
+                                <ion-option-button class="button button-assertive button-outline" ng-click="deletecatagory(item.id,item.title);" style="margin:0;padding:0;">
+                                <button class="button button-assertive button-outline" ng-click="deletecatagory(item.id,item.title);">
+                                    <i class="icon ion-trash-a " ></i>
+                                </button>
+                            </ion-option-button>
+                            
+                        </ion-item>
+                    </ion-list>
+                    <div>
+                        &nbsp;
+                    </div>
+                </ion-content>
+                <div class="bar bar-subfooter">
+                    <button class="button button-small ion-jet button-balanced pull-right" ng-click="scopen()" >  Shipping Scheme</button>
+                </div>
+                <div class="bar bar-footer">
+                        <button class="button button-small ion-log-out button-assertive" ng-click="logout()">
+                              &nbsp;&nbsp;Log Out&nbsp;&nbsp;  
+                        </button>
+                    <h1 class="title"> </h1>
+                        <button class="button button-small ion-ios7-plus-outline button-royal" ng-click="addcatagory()" style="float:right;">&nbsp;&nbsp;&nbsp;Add Category&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    
+                </div>
+                </ion-view>
+                </ion-side-menu>
+    </ion-side-menus>
+    
+</ion-view>

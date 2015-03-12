@@ -1,0 +1,23 @@
+<ion-view title="{{historyarr[0].additional_field}}">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-left" ng-click="historyback()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-chatboxes" ng-click="appwall()"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+<p ng-bind-html="historyelement"></p>
+
+  <!--<div class="padding" ng-if="device=='iphone'">
+	<p ng-bind-html="historyelement"></p>
+    
+  </div>
+  
+  <div class="padding" ng-if="device=='ipad'">
+  	<p ng-bind-html="historyelement"></p>
+    
+  </div>-->
+    </ion-content>
+
+</ion-view>

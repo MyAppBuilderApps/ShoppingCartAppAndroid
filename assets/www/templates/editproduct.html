@@ -1,0 +1,169 @@
+<ion-view title="{{title}}">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-left" ng-click="contentback()"></button>
+  </ion-nav-buttons>
+  
+  <ion-content class="has-header">
+
+
+  <div class="padding" ng-if="device=='iphone'">
+          
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.title" placeholder="Title" style="">
+                  </label>
+          
+          </br>
+          
+          <textarea ng-model="add.text" ng-bind-html="add.text" placeholder="Description" style="background-color:#E1E1E1;background-size:100% 100%;height:100px;border-radius:0px; padding:5px;"></textarea>
+          
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.price" placeholder="Price" style="">
+                  </label>
+          <br />
+          <div ng-if="scval=='UPS'">
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.w" placeholder="Product Weight in pounds" style="">
+                  </label>
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.l" placeholder="Box Length in inches" style="">
+                  </label>
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.h" placeholder="Box Height in inches" style="">
+                  </label>
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.b" placeholder="Box Breadth in inches" style="">
+                  </label>
+          </div>
+          </br>
+          <div ng-if="scval=='BS'">
+           Shipping:
+          <tags-input ng-model="add.elementTag"></tags-input>
+          <span style="color:grey;font-size:14px;font-style:italic;">(eg: Air $6,Ground $4,...)</span>
+          </div>
+          </br>
+          <button class="button button-small" style="background-color:#511E3A; color:#ffffff;float:right;" ng-click="addfield()">
+              Add New Field
+          </button>
+          </br>
+          </br>
+          <div class="list">
+              <div ng-if="cust!=''" ng-repeat="item1 in cust" class="item item-button-right" >
+                  {{item1.title}}:
+                  <tags-input ng-model="models[$index]"></tags-input>
+                  <button class="button button-assertive button-outline" ng-click="Deletecust(item1.id);">
+                      <i class="icon ion-trash-a " ></i>
+                  </button>
+              </div>
+          </div>
+           <!--<div ng-if="cust!=''" ng-repeat="item in cust">
+               {{item.title}}:
+               <tags-input ng-model="models[$index]"></tags-input>
+               </div>-->
+           </br>
+          <div align="center" ng-click="videoUploadFtn();">
+              <img src="img/btn_image.png" style="width:50%;" />
+          </div>
+          </br>
+          <div class="list">
+              <div ng-repeat="item in buttonDeleteArray" class="item item-avatar item-button-right" >
+                  <img src={{item.url}} style="z-index:-1;"/>
+                  <button class="button button-assertive button-outline" ng-click="buttonDeletevideo(item.id);" style="margin-top:4%;">
+                      <i class="icon ion-trash-a " ></i>
+                  </button>
+              </div>
+          </div>
+          <ion-checkbox ng-model="Checked" class="item item-text-wrap">Remove this Product</ion-checkbox>
+          
+          <button ng-if="Checked==false" class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="editproduct()">
+              Update
+          </button>
+          <button ng-if="Checked==true" class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="deleteproduct()">
+              Delete
+          </button>
+   </div>
+  
+  <div class="padding" ng-if="device=='ipad'" style="padding:5% 20% 5% 20%;">
+      
+      <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+          <input type="text" ng-model="add.title" placeholder="Title" style="">
+              </label>
+      
+      </br>
+      <textarea ng-model="add.text" placeholder="Description" style="background-color:#E1E1E1;background-size:100% 100%;height:100px;border-radius:0px; padding:5px;"></textarea>
+      
+      <br />
+      
+      
+      <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+          <input type="text" pattern="[0-9]*" ng-model="add.price" placeholder="Price" style="">
+              </label>
+      <br />
+      <div ng-if="scval=='UPS'">
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.w" placeholder="Product Weight in pounds" style="">
+                  </label>
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.l" placeholder="Box Length in inches" style="">
+                  </label>
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.h" placeholder="Box Height in inches" style="">
+                  </label>
+          <br />
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.b" placeholder="Box Breadth in inches" style="">
+                  </label>
+      </div>
+      </br>
+      <div ng-if="scval=='BS'">
+          Shipping:
+          <tags-input ng-model="add.elementTag"></tags-input>
+          <span style="color:grey;font-size:14px;font-style:italic;">(eg: Air $6,Ground $4,...)</span>
+      </div>
+      </br>
+      <button class="button button-small" style="background-color:#511E3A; color:#ffffff;float:right;" ng-click="addfield()">
+          Add New Field
+      </button>
+      </br>
+      </br>
+      <div class="list">
+          <div ng-if="cust!=''" ng-repeat="item1 in cust" class="item item-button-right" >
+              {{item1.title}}:
+              <tags-input ng-model="models[$index]"></tags-input>
+              <button class="button button-assertive button-outline" ng-click="Deletecust(item1.id);">
+                  <i class="icon ion-trash-a " ></i>
+              </button>
+          </div>
+      </div>
+      
+      </br>
+      <div align="center" ng-click="videoUploadFtn();">
+          <img src="img/btn_image.png" style="width:25%;" />
+      </div>
+      </br>
+      <div class="list">
+          <div ng-repeat="item in buttonDeleteArray" class="item item-avatar item-button-right" >
+              <img src={{item.url}} style="z-index:-1;"/>
+              <button class="button button-assertive button-outline" ng-click="buttonDeletevideo(item.id);">
+                  <i class="icon ion-trash-a " ></i>
+              </button>
+          </div>
+      </div>
+      </br>
+      <ion-checkbox ng-model="Checked" class="item item-text-wrap">Remove this Product</ion-checkbox>
+      </br>
+      <button ng-if="Checked==false" class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="editproduct()">
+          Update
+      </button>
+      <button ng-if="Checked==true" class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="deleteproduct()">
+          Delete
+      </button>
+  </div>
+    </ion-content>
+
+</ion-view>

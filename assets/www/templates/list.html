@@ -1,0 +1,24 @@
+<ion-view>
+<ion-nav-buttons side="left" style="margin-top:2%;">
+    <button class="button button-energized button-icon ion-ios7-information-outline" ng-click="info()"></button>
+  </ion-nav-buttons>
+  <ion-content  style="background-image : url('img/bg.png'); background-size:100% 100%; background-repeat:no-repeat;">
+    <!--<ion-list>
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+        {{friend.name}}
+      </ion-item>
+    </ion-list>-->
+    <div class="list">
+        
+        <a ng-repeat="item in items" class="item item-thumbnail-left item-text-wrap" ng-click="show(item.media$group.media$description.$t,item.media$group.media$thumbnail[1].url,item.media$group.yt$videoid.$t,split(item.media$group.media$title.$t));" style="background:none; border:none;background-image : url(img/bar.png); background-size:100% 100%; background-repeat:no-repeat;">
+            
+            <img ng-src="{{ item.media$group.media$thumbnail[0].url }}">
+                <h2 class="item-text-wrap">{{ split(item.media$group.media$title.$t) }}</h2>
+                <p style="color:black">{{ split1(item.media$group.media$title.$t) }}</p>
+                <!-- <p style="font-size:10px;"><span style="font-size:10px;float:left">Views: {{ item.yt$statistics.viewCount }}</span><span style="font-size:10px;float:right">Date: {{ split1(item.media$group.media$title.$t) }}</span></p> -->
+                
+                </a>
+        
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,85 @@
+<ion-view title="Order List" >
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-left" ng-click="contentback()"></button>
+    </ion-nav-buttons>
+    
+                <ion-content class="has-header">
+                    <ion-list ng-if="device=='iphone'">
+                        <ion-item class="item item-button-right" ng-repeat="item in orders|reverse" type="item-text-wrap" class="item" ng-click="ordersClickFtn(item.id);">
+                            {{$index+1}}. Order ID: {{item.title}}
+                            <p style="padding:0; margin-bottom:0px; margin-left:18px;">Order Date: {{item.elements[0].title}}</p>
+                            <p style="padding:0; margin-bottom:0px; margin-left:18px;">Total: ${{item.elements[0].price}}</p>
+                            <button class="button button-positive button-outline" style="border:none;" ng-click="">
+                                <i class="icon ion-ios7-eye " ></i>
+                            </button>
+                             </ion-item>
+                    </ion-list>
+                    <div class="card" ng-if="device=='ipad'" style="padding:5% 5% 5% 5%">
+                    <ion-list>
+                        <ion-item class="item item-button-right" ng-repeat="item in orders|reverse" type="item-text-wrap" class="item" ng-click="ordersClickFtn(item.id);">
+                            {{$index+1}}. Order ID: {{item.title}}
+                            <p style="padding:0; margin-bottom:0px; margin-left:18px;">Order Date: {{item.elements[0].title}}</p>
+                            <p style="padding:0; margin-bottom:0px; margin-left:18px;">Total: ${{item.elements[0].price}}</p>
+                            <button class="button button-positive button-outline" style="border:none;" ng-click="">
+                                <i class="icon ion-ios7-eye " ></i>
+                            </button>
+                        </ion-item>
+                    </ion-list>
+                    </div>
+                    <div>
+                        &nbsp;
+                    </div>
+                   </ion-content>
+                
+           
+            <div ng-if="page=='pending'" class="tabs-striped tabs-color-assertive tabs-background-stable">
+                <div class="tabs">
+                    <a class="tab-item  active" ng-click="pending()">
+                        
+                        Pending
+                    </a>
+                    <a class="tab-item" ng-click="delivered()">
+                        
+                        Delivered
+                    </a>
+                    <a class="tab-item" ng-click="returned()">
+                        
+                        Returned
+                    </a>
+                </div>
+            </div>
+            
+            <div ng-if="page=='delivered'" class="tabs-striped tabs-color-balanced tabs-background-stable">
+                <div class="tabs">
+                    <a class="tab-item" ng-click="pending()">
+                        
+                        Pending
+                    </a>
+                    <a class="tab-item active" ng-click="delivered()">
+                        
+                        Delivered
+                    </a>
+                    <a class="tab-item" ng-click="returned()">
+                        
+                        Returned
+                    </a>
+                </div>
+            </div>
+            
+            <div ng-if="page=='returned'" class="tabs-striped tabs-color-dark tabs-background-stable">
+                <div class="tabs">
+                    <a class="tab-item" ng-click="pending()">
+                        
+                        Pending
+                    </a>
+                    <a class="tab-item" ng-click="delivered()">
+                        
+                        Delivered
+                    </a>
+                    <a class="tab-item active" ng-click="returned()">
+                        
+                        Returned
+                    </a>
+                </div>
+            </div>
+ </ion-view>

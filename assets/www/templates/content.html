@@ -1,0 +1,145 @@
+<ion-view title="{{title}}">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-left" ng-click="contentback()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button ng-if="cartlen!=0" style=" background-image : url(img/cart.png); background-size:100% 85%; background-repeat:no-repeat;border-radius: 0px; border: 0px; width:35px; height:35px; color:white; padding-top:5px;" ng-click="gocart()">{{cartlen}}</button>
+      <button ng-if="cartlen==0" style=" background-image : url(img/cart.png); background-size:100% 85%; background-repeat:no-repeat;border-radius: 0px; border: 0px; width:35px; height:35px; color:white; padding-top:5px;" ng-click="gocart0()">{{cartlen}}</button>
+  </ion-nav-buttons>
+  
+  <ion-content class="has-header">
+  <div class="card" style="padding:0px; margin:0px; align:center;" ng-if="device=='iphone'">
+      <h4 class="title"  align="center">{{content.title}}</h4>
+      <ul class="list" style="padding:0px; margin:0px; align:center;">
+          <ion-slide-box on-slide-changed="slideChanged(index)" align="center">
+              <ion-slide ng-repeat="item in content.images" align="center" style="width:contain; height:50%; align:center; background-color:white;">
+                  
+                  <img src={{item.url}} align="center" style="width:contain; height:50%; align:center;"/>
+                  
+              </ion-slide>
+              
+          </ion-slide-box>
+            
+            <!-- <p id="scrollTop" align="justify" ng-bind-html="deliberatelyTrustDangerousSnippet()" style="width:100%;"></p>
+            <p ng-bind-html="deliberatelyTrustDangerousSnippet1()"></p> -->
+
+          </ul>
+     <div class="padding" align="left">
+          <div class="row" ng-if="scval=='BS'">
+              <div class="col col-33"><span class="input-label" align="left">Shipping:</span></div>
+              <div class="col">
+                  <select ng-model="add.scheme" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;" ng-options='number for number in {{content.tag_list}}'>
+                     
+                  </select>
+              </div>
+          </div>
+          
+      
+      
+          <div class="row">
+              <div class="col col-33"><span class="input-label" align="left">Quantity:  </span></div>
+              <div class="col">
+               <select ng-model="qty1" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;">
+                   <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option><option>49</option><option>50</option><option>51</option><option>52</option><option>53</option><option>54</option><option>55</option><option>56</option><option>57</option><option>58</option><option>59</option><option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option><option>71</option><option>72</option><option>73</option><option>74</option><option>75</option><option>76</option><option>77</option><option>78</option><option>79</option><option>80</option><option>81</option><option>82</option><option>83</option><option>84</option><option>85</option><option>86</option><option>87</option><option>88</option><option>89</option><option>90</option><option>91</option><option>92</option><option>93</option><option>94</option><option>95</option><option>96</option><option>97</option><option>98</option><option>99</option><option>100</option>                                                   </select>
+                      
+              </div>
+          </div>
+          
+      <div class="row">
+      <div class="col col-33"><span class="input-label" style="width:100%;">Unit Price:</span></div>
+      <div class="col" align="left">
+          <span class="input-label" style="width:100%;">
+          ${{convert(content.price)}}
+          </span>
+          </div>
+      </div>
+      
+      <div class="row" ng-if="content.custom_values!=''" ng-repeat="item in content.custom_values">
+          <div class="col col-33"><span class="input-label" align="left">{{item.title}}</span></div>
+          <div class="col">
+              <select ng-model='models[$index]' style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;" ng-options='number for number in {{(item.value).split(",")}}'>
+                  
+              </select>
+          </div>
+      </div>
+      
+      <div style="padding: 0 10% 0 10%; align:center; margin:0px;">
+      <button class="button button-full icon-left ion-ios7-cart" style="background-color:#511E3A; color:#ffffff; margin:0px;" ng-click="addcart(content.id,qty1,add.scheme)">
+          Add to Cart
+      </button>
+      </div>
+      </div>
+             <!-- <div class="item item-divider item-button-right" align="left">
+                  Price: {{content.price}}
+                  </div>-->
+    </div>
+  
+  
+  <div class="card" style="padding:0px; margin:0px; align:center;" ng-if="device=='ipad'">
+      <h4 class="title"  align="center">{{content.title}}</h4>
+      <ul class="list" style="padding:0px; margin:0px; align:center;">
+          <ion-slide-box on-slide-changed="slideChanged(index)" align="center">
+              <ion-slide ng-repeat="item in content.images" align="center" style="width:contain; height:50%; align:center; background-color:white;">
+                  
+                  <img src={{item.url}} align="center" style="width:contain; height:50%; align:center;"/>
+                  
+              </ion-slide>
+              
+          </ion-slide-box>
+          
+          <!-- <p id="scrollTop" align="justify" ng-bind-html="deliberatelyTrustDangerousSnippet()" style="width:100%;"></p>
+           <p ng-bind-html="deliberatelyTrustDangerousSnippet1()"></p> -->
+          
+      </ul>
+     <div class="padding" align="left">
+          <div class="row"  ng-if="scval=='BS'">
+              <div class="col col-20"><span class="input-label" align="left">Shipping:</span></div>
+              <div class="col">
+                  <select ng-model="add.scheme" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;  width:50%;" ng-options='number for number in {{content.tag_list}}'>
+                      
+                  </select>
+              </div>
+          </div>
+          
+          
+          
+          <div class="row">
+              <div class="col col-20"><span class="input-label" align="left">Quantity:  </span></div>
+              <div class="col">
+                  <select ng-model="qty1" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px; width:50%;">
+                      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option><option>49</option><option>50</option><option>51</option><option>52</option><option>53</option><option>54</option><option>55</option><option>56</option><option>57</option><option>58</option><option>59</option><option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option><option>71</option><option>72</option><option>73</option><option>74</option><option>75</option><option>76</option><option>77</option><option>78</option><option>79</option><option>80</option><option>81</option><option>82</option><option>83</option><option>84</option><option>85</option><option>86</option><option>87</option><option>88</option><option>89</option><option>90</option><option>91</option><option>92</option><option>93</option><option>94</option><option>95</option><option>96</option><option>97</option><option>98</option><option>99</option><option>100</option>                                                   </select>
+                  
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="col col-20"><span class="input-label" style="width:100%;">Unit Price:</span></div>
+              <div class="col" align="left">
+                  <span class="input-label" style="width:100%;">
+                      ${{convert(content.price)}}
+                  </span>
+              </div>
+          </div>
+          
+          <div class="row" ng-if="content.custom_values!=''" ng-repeat="item in content.custom_values">
+              <div class="col col-20"><span class="input-label" align="left">{{item.title}}:</span></div>
+              <div class="col">
+                  <select ng-model='models[$index]' style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:50%;border-radius:0px;height:40px;" ng-options='number for number in {{(item.value).split(",")}}'>
+                      
+                  </select>
+              </div>
+          </div>
+          <div style="padding: 0 20% 0 20%; align:center;">
+              <button class="button button-full icon-left ion-ios7-cart" style="background-color:#511E3A; color:#ffffff;" ng-click="addcart(content.id,qty1,add.scheme)">
+                  Add to Cart
+              </button>
+          </div>
+      </div>
+      <!-- <div class="item item-divider item-button-right" align="left">
+       Price: {{content.price}}
+       </div>-->
+  </div>
+  
+  </ion-content>
+
+</ion-view>

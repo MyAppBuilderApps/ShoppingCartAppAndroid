@@ -1,0 +1,101 @@
+<div class="modal">
+        <ion-header-bar align-title="center" class="bar bar-header" style="background:none; background-image : url(img/navigation_bar.png); background-size:100% 100%; background-repeat:no-repeat;border-radius: 0px; border: 0px;">
+         <h1 class="title" style="font-size:16px;">My Cart</h1>
+        <button class="button button-clear " ng-click="addressModal.hide();"><i class="icon ion-ios7-close-outline"></i></button>
+                  
+        </ion-header-bar>
+        <div class="bar bar-subheader" style="background-color:#F8F2E9;">
+            <p style="margin-top:6px;"><span style="color:#6C6A5E; font-size:18px;">Item: <b style="color:#6C6A5E; font-size:18px;">{{cartlen}}</b><span style="color:#6C6A5E; font-size:18px; float:right;">Total: <b style="color:#6C6A5E; font-size:18px;">${{totalprice()}}</b><span><span></p>
+        </div>
+        
+  <ion-content has-header="true" padding="true" style="background-image : url(img/bg.png); background-size:100% 100%; background-repeat:no-repeat;">
+      </br>
+      </br>
+      </br>
+      <div class="padding">
+          <p>Billing Address</p>
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="text" ng-model="add.userName" placeholder="Name" style="">
+                  </label>
+          
+          </br>
+          
+          <textarea ng-model="add.address" placeholder="Address" style="background-color:#E1E1E1;background-size:100% 100%;height:100px;border-radius:0px; padding:5px;"></textarea>
+          
+          </br>
+          
+          <div class="row" style="padding:0">
+              <div class="col col-45"  style="padding:0">
+                  <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+                      <input type="text" ng-model="add.selectedcity" placeholder="City" style="">
+                          </label>
+              </div>
+              <div class="col col-10"  style="padding:0">
+              </div>
+              <div class="col col-45" style="padding:0;">
+                  
+                  <select ng-model="add.selectedstate" ng-options="state for state in states | orderBy:'toString()'" class="styled-select" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;">
+                      <option value="">State</option>
+                  </select>
+                  
+              </div>
+          </div>
+          </br>
+          
+          <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+              <input type="number" ng-model="add.pincode" placeholder="Zipcode" style="">
+                  </label>
+          
+          
+          
+      </div>
+      
+      <ion-checkbox ng-model="Checked" class="item item-text-wrap">Shipping Address same as Billing Address</ion-checkbox>
+      
+      <div class="padding" ng-if="Checked==false">
+          <p>Shipping Address</p>
+      <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+          <input type="text" ng-model="add.userName1" placeholder="Name" style="">
+              </label>
+      
+      </br>
+      
+          <textarea ng-model="add.address1" placeholder="Address" style="background-color:#E1E1E1;background-size:100% 100%;height:100px;border-radius:0px; padding:5px;"></textarea>
+          
+      </br>
+      
+      <div class="row" style="padding:0">
+          <div class="col col-45"  style="padding:0">
+              <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+           <input type="text" ng-model="add.selectedcity1" placeholder="City" style="">
+               </label>
+          </div>
+          <div class="col col-10"  style="padding:0">
+          </div>
+          <div class="col col-45" style="padding:0;">
+              
+                  <select ng-model="add.selectedstate1" ng-options="state for state in states | orderBy:'toString()'" class="styled-select" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;">
+                      <option value="">State</option>
+                  </select>
+              
+          </div>
+      </div>
+      </br>
+      
+      <label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+          <input type="text" ng-model="add.pincode1" placeholder="Zipcode" style="">
+              </label>
+      
+
+
+</div>
+      
+      <div class="padding" align="right">
+          <button class="button" ng-click="Purchase(Checked)" style="background-color:#511E3A; color:#ffffff;">
+              PLACE ORDER
+          </button>
+      </div>
+</br>
+</br>
+  </ion-content>
+</div>

@@ -1,0 +1,52 @@
+<ion-view title="Order Details">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-left" ng-click="contentback()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-chatboxes" ng-click="appwall()"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+<p ng-bind-html="orderitems"></p>
+  <div class="padding" ng-if="device=='iphone'">
+	
+    
+    <div class="row">
+        <div class="col col-20"><span class="input-label" align="left">Status:</span></div>
+        <div class="col">
+            <select ng-model="status" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;">
+                <option>Pending</option>
+                <option>Delivered</option>
+                <option>Returned</option>
+            </select>
+        </div>
+    </div>
+    
+    <button class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="save(status)">
+        Save
+    </button>
+    
+  </div>
+  
+  <div class="padding" ng-if="device=='ipad'" style="padding:5% 10% 5% 10%;">
+  	
+    
+    <div class="row">
+        <div class="col col-50"><span class="input-label" align="center">Status:</span></div>
+        <div class="col">
+            <select ng-model="status" style="-webkit-appearance: none;border:none;background-image:url(img/txt_dropdown.png);background-size:100% 100%;width:100%;border-radius:0px;height:40px;">
+                <option>Pending</option>
+                <option>Delivered</option>
+                <option>Returned</option>
+            </select>
+        </div>
+    </div>
+    
+    <button class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="save(status)">
+        Save
+    </button>
+    
+  </div>
+    </ion-content>
+
+</ion-view>

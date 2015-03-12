@@ -1,0 +1,38 @@
+<ion-view title="Register">
+    
+        <ion-nav-buttons side="left">
+            <button class="button button-icon icon ion-ios7-arrow-left" ng-click="registerBack();"></button>
+        </ion-nav-buttons>
+    
+  <ion-content >
+
+    <div class="list list-inset">
+      <!--<label class="item item-input" style="background-color:white;background-size:100% 100%;color:white;">
+         <i class="icon "><img src="img/name.png" style="width:30px;height:30px;"/></i>
+        <input type="text" id="regName" placeholder="Name">
+      </label>-->
+      
+      <label class="item item-input" style="background-color:white;background-size:100% 100%;color:white;">
+        <i class="icon "><img src="img/username.png" style="width:30px;height:30px;"/></i>
+        <input type="text" ng-model="regUserId" placeholder="Username">
+      </label>
+      <label class="item item-input" style="background-color:white;background-size:100% 100%;color:white;">
+        <i class="icon "><img src="img/email.png" style="width:30px;height:30px;"/></i>
+        <input type="email" ng-model="regEmail" placeholder="EmailId">
+      </label>
+      <label class="item item-input" style="background-color:white;background-size:100% 100%;color:white;">
+        <i class="icon "><img src="img/password.png" style="width:30px;height:30px;"/></i>
+        <input type="password" ng-model="regPassword" placeholder="Password">
+      </label>
+      <label class="item item-input" style="background-color:white;background-size:100% 100%;color:white;">
+        <i class="icon "><img src="img/password.png" style="width:30px;height:30px;"/></i>
+        <input type="password" ng-model="regConfirmPassword" placeholder="Confirm Password ">
+      </label>
+      
+
+      <button class="button button-full" ng-click="registerPageSubmitFtn(regUserId,regEmail,regPassword,regConfirmPassword);" style="background-color:#d6dbe6;background-size:100% 100%;">Register</button>
+     
+    </div>
+  </ion-content>
+  
+</ion-view>

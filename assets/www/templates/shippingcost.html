@@ -1,0 +1,56 @@
+<div class="modal">
+        <ion-header-bar align-title="center" class="bar bar-header" style="background:none; background-image : url(img/navigation_bar.png); background-size:100% 100%; background-repeat:no-repeat;border-radius: 0px; border: 0px;">
+         <h1 class="title" style="font-size:16px;">Select Shipping Scheme</h1>
+        <button class="button button-clear " ng-click="scModal.hide()"><i class="icon ion-ios7-close-outline"></i></button>
+                  
+        </ion-header-bar>
+
+        
+  <ion-content has-header="true" padding="true" style="background-image : url(img/bg.png); background-size:100% 100%; background-repeat:no-repeat;">
+
+<div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group" ng-model="choice" ng-value="'UPS'">
+    <div class="item-content">
+      UPS Schemes
+    </div>
+    <i class="radio-icon ion-checkmark positive"></i>
+  </label>
+  
+  <label class="item item-radio">
+      <input type="radio" name="group" ng-model="choice" ng-value="'BS'">
+          <div class="item-content">
+              Built in Schemes
+          </div>
+          <i class="radio-icon ion-checkmark positive"></i>
+          </label>
+  
+  <label class="item item-radio">
+      <input type="radio" name="group" ng-model="choice" ng-value="'PT'">
+          <div class="item-content">
+              Pricing Table
+          </div>
+          <i class="radio-icon ion-checkmark positive"></i>
+          </label>
+
+
+</div>
+<div class="padding"  ng-if="choice=='PT'">
+<label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+    <input type="text" ng-model="add.maxamount" placeholder="Free Shipping Purchase Amount" style="">
+        </label>
+
+</br>
+<label class="item item-input "style="background-color:#E1E1E1;background-size:100% 100%;" >
+    <input type="text" ng-model="add.shippingprice" placeholder="Shipping Price" style="">
+        </label>
+
+</div>
+<div class="padding">
+<button class="button button-full" style="background-color:#511E3A; color:#ffffff;" ng-click="scsave(choice)">
+    Save
+</button>
+</div>
+   </ion-content>
+</div>
