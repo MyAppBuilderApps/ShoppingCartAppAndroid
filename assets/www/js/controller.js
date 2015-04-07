@@ -2216,24 +2216,24 @@ control.controller('cartCtrl',function($scope,$state,$ionicLoading,$ionicModal,$
                    if(val==true){
                    if($scope.add.userName && $scope.add.address && $scope.add.selectedcity && $scope.add.selectedstate && $scope.add.pincode){
                    if(scval=='UPS'){
-                   var url ='http://nuatransmedia.com/song_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+JSON.stringify(scarr)+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address+','+$scope.add.selectedcity+','+$scope.add.selectedstate+','+$scope.add.pincode;
+                   var url ='http://getappco.de/shop_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+JSON.stringify(scarr)+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address+','+$scope.add.selectedcity+','+$scope.add.selectedstate+','+$scope.add.pincode;
                    }
                    else if(scval=='BS'){
-                   var url ='http://nuatransmedia.com/song_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type=BS&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address+','+$scope.add.selectedcity+','+$scope.add.selectedstate+','+$scope.add.pincode;
+                   var url ='http://getappco.de/shop_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type=BS&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address+','+$scope.add.selectedcity+','+$scope.add.selectedstate+','+$scope.add.pincode;
                    }
                    else{
-                   var url ='http://nuatransmedia.com/song_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+scval+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address+','+$scope.add.selectedcity+','+$scope.add.selectedstate+','+$scope.add.pincode;
+                   var url ='http://getappco.de/shop_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+scval+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address+','+$scope.add.selectedcity+','+$scope.add.selectedstate+','+$scope.add.pincode;
                    }
                    
                    
                    var ref = window.open(url, '_blank', 'location=no,toolbar=yes,closebuttoncaption=Cancel');
                    ref.addEventListener('loadstop', function(event) {
                                         
-                                        if(event.url=='http://nuatransmedia.com/song_app/stripe/done.html'){
+                                        if(event.url=='http://getappco.de/shop_app/stripe/done.html'){
                                         ref.close();
                                         var res = url.replace(/&/g, "^");
                                         
-                                        $scope.payment_success('http://nuatransmedia.com/song_app/stripe/cart_details.php?url='+res);
+                                        $scope.payment_success('http://getappco.de/shop_app/stripe/cart_details.php?url='+res);
                                         }
                                         });
                    
@@ -2251,24 +2251,24 @@ control.controller('cartCtrl',function($scope,$state,$ionicLoading,$ionicModal,$
                    else{
                    if($scope.add.userName && $scope.add.address && $scope.add.selectedcity && $scope.add.selectedstate && $scope.add.pincode && $scope.add.userName1 && $scope.add.address1 && $scope.add.selectedcity1 && $scope.add.selectedstate1 && $scope.add.pincode1){
                    if(scval=='UPS'){
-                   var url ='http://nuatransmedia.com/song_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+JSON.stringify(scarr)+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address1+','+$scope.add.selectedcity1+','+$scope.add.selectedstate1+','+$scope.add.pincode1;
+                   var url ='http://getappco.de/shop_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+JSON.stringify(scarr)+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address1+','+$scope.add.selectedcity1+','+$scope.add.selectedstate1+','+$scope.add.pincode1;
                    }
                    else if(scval=='BS'){
-                   var url ='http://nuatransmedia.com/song_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type=BS&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address1+','+$scope.add.selectedcity1+','+$scope.add.selectedstate1+','+$scope.add.pincode1;
+                   var url ='http://getappco.de/shop_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type=BS&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address1+','+$scope.add.selectedcity1+','+$scope.add.selectedstate1+','+$scope.add.pincode1;
                    }
                    else{
-                   var url ='http://nuatransmedia.com/song_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+scval+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address1+','+$scope.add.selectedcity1+','+$scope.add.selectedstate1+','+$scope.add.pincode1;
+                   var url ='http://getappco.de/shop_app/stripe/cart_android.php?C_Name='+$scope.add.userName+'&C_Mail='+useremail+'&Total_Items='+cartitemsarr.length+'&Items_Name='+productarr+'&Items_Price='+pricearr+'&Items_Qty='+quantityarr+'&Items_Tax='+taxarr+'&Image='+imagearr+'&oths='+JSON.stringify(arr)+'&type='+scval+'&Seller=333 place St.,City,AL,36000&Buyer='+$scope.add.address1+','+$scope.add.selectedcity1+','+$scope.add.selectedstate1+','+$scope.add.pincode1;
                    }
                    
                    
                    var ref = window.open(url, '_blank', 'location=no,toolbar=yes,closebuttoncaption=Cancel');
                    ref.addEventListener('loadstop', function(event) {
                                         
-                                        if(event.url=='http://nuatransmedia.com/song_app/stripe/done.html'){
+                                        if(event.url=='http://getappco.de/shop_app/stripe/done.html'){
                                         ref.close();
                                         var res = url.replace(/&/g, "^");
                                         
-                                        $scope.payment_success('http://nuatransmedia.com/song_app/stripe/cart_details.php?url='+res);
+                                        $scope.payment_success('http://getappco.de/shop_app/stripe/cart_details.php?url='+res);
                                         }
                                         });
                    }
